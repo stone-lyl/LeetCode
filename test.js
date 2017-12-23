@@ -34,3 +34,15 @@ var removeNthFromEnd = function (head, n) {
     return paddedHead.next;
 
 };
+
+function ListNode(val) {
+    this.val = val;
+    this.next = null;
+}
+
+var list1 = new ListNode(1);
+list1.next = new ListNode(2);
+list1.next.next = new ListNode(3);
+list1.next.next.next = new ListNode(4);
+list1.next.next.next.next = new ListNode(5);
+console.log(removeNthFromEnd(list1, 3));

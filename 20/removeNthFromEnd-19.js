@@ -14,38 +14,40 @@
  * @return {ListNode}
  */
 var removeNthFromEnd = function (head, n) {
+    if (n === 0) return head;
     let start = head, count = 1;
     while (start.next !== null) {
         start = start.next;
         count++;
     }
-    console.log(count);
-    let len = count - n, tempArr = [];
+    console.log(count); //count 个数
+    let len = count - n, tempArr = []; // len 位置
     start = head;
-    console.log(start); 
-    for( let i = 0; i < count -1; i++){
-        if(len-1 === i ){
+    console.log(start);
+    for (let i = 0; i < count - 1; i++) {
+        if (len - 1 === i) {    // 再被删除位置前一个
             start = start.next.next;
-            if (i === 0) tempArr.push(new ListNode(head.val));
-        }else if( len -1 < 0 ){
+            if (i === 0) tempArr.push(new ListNode(head.val));  // 处理再head只有两个节点的情况。
+        } else if (len - 1 < 0) {   // head长度为1
             start = start.next;
         }
-        else if( i === 0){
+        else if (i === 0) {         // i 等于 0 使直接 push 第一个head.val节点
             tempArr.push(new ListNode(head.val));
             start = start.next;
         }
-        else{
+        else {
             start = start.next;
         }
 
-        if( start !== null){
+        if (start !== null) {   //选取有效的节点。
             tempArr.push(new ListNode(start.val));
         }
     }
     console.log('result', tempArr);
-    let newList = tempArr[0] ;
-    for( let k = 1 ;k< tempArr.length; k++){
-        tempArr[k-1].next = tempArr[k];
+    let newList = tempArr[0];
+    // 通过依次for循环将数组连接成 链表。
+    for (let k = 1; k < tempArr.length; k++) {
+        tempArr[k - 1].next = tempArr[k];
     }
     return newList;
 
