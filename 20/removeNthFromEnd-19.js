@@ -9,6 +9,11 @@
  * 1->2->3->5.
  */
 /**
+ * 1.获得listnode 的长度。
+ * 2.找到删除的位置。
+ * 3.将一个个节点push到数组中
+ * 4.将数组连接成链表。
+ * 
  * @param {ListNode} head
  * @param {number} n
  * @return {ListNode}
