@@ -1,4 +1,5 @@
 /**
+ * 记录nums[i]为零的特殊情况
  * @param {number[]} nums
  * @return {number[]}
  */
