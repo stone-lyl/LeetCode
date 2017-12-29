@@ -15,3 +15,9 @@ var getSum = function (a, b) {
     }
     return a;
 };
+getSum(5, 12);
+console.log('b', 'a');
+console.log('0101', '1100');
+console.log('1000', '1001');
+console.log('10000', '0001');
+console.log('0000', '100001');
