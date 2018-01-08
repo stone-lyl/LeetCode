@@ -3,32 +3,34 @@
  * @param {number} amount
  * @return {number}
  */
+// Number.MAX_SAFE_INTEGER： 最大的安全整数： 2^53 - 1;
 var coinChange = function (coins, amount) {
-    let coinsSort = coins.sort((a, b) => a > b);
-    console.log(coinsSort);
-    for (let i = coinsSort.length - 1; i >= 0; i--) {
-        let sum = 0, count = 0;
-        if (coinsSort[i] > amount) {
-            continue;
-        } else if (coinsSort[i] === amount) {
-            return 1;
-        } else {
-            sum += coinsSort[i];
-            count = 1;
-            for (let j = 0; j < i; j++) {
-                sum += coinsSort[j];
-                if (sum === amount) {
-                    console.log(count + 1);
-                    return count++;
-                } else if (sum > amount) {
-                    break;
-                } else {
-                    count++;
-                }
+    const dp = [0];
+    for (let i = 1; i <= amount; i++) {
+        dp[i] = Number.MAX_SAFE_INTEGER;
+        for (let j = 0; j < coins.length; j++) {
+            if (i >= coins[j] && dp[i - coins[j]] + 1 < dp[i]) {
+                dp[i] = dp[i - coins[j]] + 1;
             }
         }
-
-
     }
-    return -1;
+    return dp[amount] === Number.MAX_SAFE_INTEGER ? -1 : dp[amount];
 };
+// var coinChange = function (coins, amount) {
+//     const DP = [0];
+//     let count = 0;
+
+//     for (let i = 1; i <= amount; i += 1) {
+//         DP[i] = Number.MAX_SAFE_INTEGER;
+//         for (let j = 0; j < coins.length; j += 1) {
+//             count++;
+//             if (i >= coins[j] && DP[i - coins[j]] + 1 < DP[i]) {
+//                 DP[i] = DP[i - coins[j]] + 1;
+//             }
+//         }
+//     }
+//     console.log(count);
+//     return DP[amount] === Number.MAX_SAFE_INTEGER ? -1 : DP[amount];
+// };
+// [186, 419, 83, 408], 6249
+console.log(coinChange([2], 1));
