@@ -12,12 +12,12 @@ var wordBreak = function (s, wordDict) {
     for (let i = 1; i <= s.length; i++) {
         for (let j = 0; j < i; j++) {
             if (record[j] && (wordDict.indexOf(s.slice(j, i)) !== -1)){
+                console.log(s.slice(j, i));
                 record[i] = true;
-                break;
             }
         }
     }
     return record[s.length] === true ;
 };
 
-console.log(wordBreak('abcd', ['a', 'abc', 'b', 'cd']));
+console.log(wordBreak('catsanddog', ["cat", "cats", "and", "sand", "dog"]));
