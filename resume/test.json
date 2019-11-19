@@ -1,0 +1,41 @@
+{
+    // 图片展示结构
+    "data": [
+        {
+            "activity": 12,
+            "name": "background", //英文 
+            "url": "http://xxx",
+            "des": "说明描述"
+        },
+        {
+            "activity": 12,
+            "name": "titleImg",
+            "url": "http://",
+            "des": "说明描述"
+        }
+    ],
+    // 规则展示结构
+    "data2": [
+        {
+            "activity": 12,
+            "title": "titleImg",
+            "content": "规则描述",
+            "remark": "备注"
+        }
+    ],
+    // structure 后接口
+    "data1": {
+        "activity": 12,
+        "picInfo": {
+            "background": "http://xxx", // 说明描述
+            "titleImg": "http://" // 说明描述
+        },
+        "copyInfo": [
+            {
+                "title": "titleImg",
+                "content": "规则描述",
+                "remark": "备注"
+            }
+        ]
+    }
+}
