@@ -24,9 +24,9 @@ var generateParenthesis = function(n) {
         }
     };
     Iteration('', 0, 0);
-    // return result;
+    return result;
 };
-generateParenthesis(3);
+// console.log(generateParenthesis(3), 'result');
 
 var generateParenthesis1 = function (n) {
     let res = [];
