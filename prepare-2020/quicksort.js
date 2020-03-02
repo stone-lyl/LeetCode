@@ -6,7 +6,7 @@
  * 3. 对“基准”左边和右边的两个子集，不断重复第一步和第二步，知道所有子集都只剩下一个元素为止。
  */
 
-let testArr = [1, 8, 6, 3, 9, 2, 11, 9];
+let testArr1 = [1, 8, 6, 3, 9, 2, 11, 9];
 
 const quicksort = (disorderArr) => {
     const arrLen = disorderArr.length;
@@ -30,4 +30,4 @@ const quicksort = (disorderArr) => {
     console.log('------------');
     return quicksort(leftArr).concat(pivot, quicksort(rightArr));
 }
-console.log(quicksort(testArr), 'result');
+console.log(quicksort(testArr1), 'result');
