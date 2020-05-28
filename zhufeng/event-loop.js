@@ -23,4 +23,4 @@ new Promise(function (resolve) {
 })
 console.log('end');
 
-// start - 1 start - promise 1 - end - 2 - 1 end - promise 2 - set timeout
+// start - 1 start - 2 - promise 1 - end - 1 end - promise 2 - set time out (浏览器答案正确)

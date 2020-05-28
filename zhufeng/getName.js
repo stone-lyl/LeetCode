@@ -1,4 +1,5 @@
 function Foo() {
+    // 在浏览器中为设置定义，提升为全局变量。
     getName = function () {
         console.log(1);
     }
@@ -28,9 +29,9 @@ function getName() {
 // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 // 在浏览器上执行才不报错
 Foo.getName(); //  2 
-getName(); // 5 - √ 4
-Foo().getName(); // 3 -  √ 1
-getName(); // 5
-new Foo.getName(); // 3
-new Foo().getName(); // 1
-new new Foo().getName(); // undefined
+getName(); // 4
+Foo().getName(); // 1
+getName(); // 1
+new Foo.getName(); // 2
+new Foo().getName(); // 3
+new new Foo().getName(); // 3
