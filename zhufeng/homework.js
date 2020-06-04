@@ -40,31 +40,42 @@
 //     })(x)
 // }
 
-// var m = y.z; // x = 2, this.x = 3; 
+// var m = y.z; // x = 2, this.x nsole.log(x, y.x); // x = 2; // x 一直作为参数传入。 y.x ???
+// = 3; 
 // m(4); // n = 4 , this.x = 2 *4 = 8; x = 7; -- x= 7
 // y.z(5); // z 执行过一次后为： function(n) { ... }; -> x = x + 3; //7 
-// console.log(x, y.x); // x = 2; // x 一直作为参数传入。 y.x ???
-
+// co
 // 3
-// var a = '?';
-// if (a == 1 && a == 2 && a == 3) {
-//     console.log(1);
-// }
+// var a = {
+//     x: 0,
+//     toString() {
+//         return ++this.x;
+//     }
+// };
+var i = 0;
+Object.defineProperty(global, 'a', {
+    get() {
+        return ++i;
+    }
+})
+if (a == 1 && a == 2 && a == 3) {
+    console.log(1);
+}
 // null ???
 
 // 4 没有问题
-var x = 0; y = 1;
-function fn() {
-    x += 2;
-    fn = function (y) {
-        console.log(y + (--x));
-    };
-    console.log(x, y);
-}
+// var x = 0; y = 1;
+// function fn() {
+//     x += 2;
+//     fn = function (y) {
+//         console.log(y + (--x));
+//     };
+//     console.log(x, y);
+// }
 
-fn(3); // 2, 1
-fn(4); // 5
-console.log(x, y); // 1, 1
+// fn(3); // 2, 1
+// fn(4); // 5
+// console.log(x, y); // 1, 1
 
 // 5
 // setTimeout(() => {
