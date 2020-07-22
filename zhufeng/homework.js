@@ -62,10 +62,21 @@
 // console.log(obj.a);
 
 // 3
-// var a = '?';
-// if (a == 1 && a == 2 && a == 3) {
-//     console.log(1);
-// }
+// var a = {
+//     x: 0,
+//     toString() {
+//         return ++this.x;
+//     }
+// };
+var i = 0;
+Object.defineProperty(global, 'a', {
+    get() {
+        return ++i;
+    }
+})
+if (a == 1 && a == 2 && a == 3) {
+    console.log(1);
+}
 // null ???
 
 // 4 没有问题
