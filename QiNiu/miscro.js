@@ -12,6 +12,10 @@ promise.then(() => {
     setTimeout(() => {
         console.log(5);
     }, 0);
-})
+}).catch(() => {
+
+}).then(() => {
+
+}).catch(() => { });
 
 console.log(4);
